@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springsecurityquickstart.mapper.OrderDetailsMapper">
+    <!-- 修改子選項-->
+    <update id="updateOptionChildren">
+        update tb_option_children
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="selected != null">
+                selected = #{selected},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            update_time = #{updateTime}
+        </set>
+        where option_children_id = #{optionChildrenId}
+    </update>
+</mapper>

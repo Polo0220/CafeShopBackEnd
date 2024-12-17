@@ -1,0 +1,28 @@
+spring.application.name: SpringSecurityQuickStart
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cafeshop
+    username: root
+    password: 1234
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true # 開啟駝峰命名規則
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+server:
+  port: 8080
+
+# 阿里雲OSS配置
+aliyun:
+  oss:
+    endpoint: https://oss-ap-northeast-1.aliyuncs.com
+    accessKeyId: LTAI5tKfcWHexQU6yWEZvkVd
+    accessKeySecret: xBbiSn8oVXrTeiKKiOi4Xna3D6eOjB
+    bucketName: web-tlias-pingping
+
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
