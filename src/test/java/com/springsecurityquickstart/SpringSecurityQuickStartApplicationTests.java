@@ -1,12 +1,10 @@
 package com.springsecurityquickstart;
 
 import com.springsecurityquickstart.domain.User;
-import com.springsecurityquickstart.mapper.MenuMapper;
+import com.springsecurityquickstart.mapper.PermMapper;
 import com.springsecurityquickstart.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -32,7 +30,7 @@ class SpringSecurityQuickStartApplicationTests {
 	}
 
 	@Autowired
-	private MenuMapper menuMapper;
+	private PermMapper menuMapper;
 
 	@Test
 	public void testSelectPermsByUserId(){

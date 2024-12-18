@@ -3,7 +3,7 @@ package com.springsecurityquickstart.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springsecurityquickstart.domain.LoginUser;
 import com.springsecurityquickstart.domain.User;
-import com.springsecurityquickstart.mapper.MenuMapper;
+import com.springsecurityquickstart.mapper.PermMapper;
 import com.springsecurityquickstart.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,8 +11,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserMapper userMapper;
     @Autowired
-    private MenuMapper menuMapper;
+    private PermMapper menuMapper;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

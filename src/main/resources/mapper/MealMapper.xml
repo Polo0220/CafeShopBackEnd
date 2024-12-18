@@ -22,8 +22,8 @@
             <if test="image != null and image != ''">
                 image = #{image},
             </if>
-            <if test="themeId != null">
-                theme_id = #{themeId},
+            <if test="menuId != null">
+                menu_id = #{menuId},
             </if>
             update_time = #{updateTime}
         </set>

@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Theme {
-    private Integer themeId; //ID
+public class Menu {
+    private Integer menuId; //ID
     private String name; //名稱
     private String image; // 圖片
     private String description; //描述

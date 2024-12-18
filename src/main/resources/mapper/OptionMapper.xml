@@ -2,22 +2,22 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.springsecurityquickstart.mapper.OptionChildrenMapper">
-    <!-- 修改子選項-->
-    <update id="updateOptionChildren">
-        update tb_option_children
+<mapper namespace="com.springsecurityquickstart.mapper.OptionMapper">
+    <!-- 更新自訂選項-->
+    <update id="updateOption">
+        update tb_option
         <set>
             <if test="name != null and name != ''">
                 name = #{name},
             </if>
-            <if test="selected != null">
-                selected = #{selected},
+            <if test="singleChoice != null">
+                single_choice = #{singleChoice},
             </if>
-            <if test="price != null">
-                price = #{price},
+            <if test="type != null">
+                type = #{type},
             </if>
             update_time = #{updateTime}
         </set>
-        where option_children_id = #{optionChildrenId}
+        where option_id = #{optionId}
     </update>
 </mapper>

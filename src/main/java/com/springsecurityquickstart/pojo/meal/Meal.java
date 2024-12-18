@@ -23,7 +23,7 @@ public class Meal {
     private Integer count; //數量
     private String description; // 描述
     private String image; // 圖片
-    private Integer themeId; // 主題ID
+    private Integer menuId; // 主題ID
     private LocalDateTime createTime; //創建時間
     private LocalDateTime updateTime; //更新時間
     private List<Option> options = new ArrayList<>();

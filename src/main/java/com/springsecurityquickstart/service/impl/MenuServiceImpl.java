@@ -1,9 +1,9 @@
 package com.springsecurityquickstart.service.impl;
 
 import com.springsecurityquickstart.mapper.MealMapper;
-import com.springsecurityquickstart.mapper.ThemeMapper;
-import com.springsecurityquickstart.pojo.Theme;
-import com.springsecurityquickstart.service.ThemeService;
+import com.springsecurityquickstart.mapper.MenuMapper;
+import com.springsecurityquickstart.pojo.Menu;
+import com.springsecurityquickstart.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,10 +12,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class ThemeServiceImpl implements ThemeService {
+public class MenuServiceImpl implements MenuService {
 
     @Autowired
-    private ThemeMapper themeMapper;
+    private MenuMapper menuMapper;
     @Autowired
     private MealMapper mealMapper;
 
@@ -24,20 +24,20 @@ public class ThemeServiceImpl implements ThemeService {
      * @return
      */
     @Override
-    public List<Theme> themeList() {
-        return themeMapper.themeList();
+    public List<Menu> menuList() {
+        return menuMapper.menuList();
     }
 
     /**
      * 新增主題
-     * @param theme
+     * @param menu
      */
     @Override
-    public void insert(Theme theme) {
-        theme.setCreateTime(LocalDateTime.now());
-        theme.setUpdateTime(LocalDateTime.now());
+    public void insert(Menu menu) {
+        menu.setCreateTime(LocalDateTime.now());
+        menu.setUpdateTime(LocalDateTime.now());
 
-        themeMapper.insert(theme);
+        menuMapper.insert(menu);
     }
 
     /**
@@ -48,19 +48,19 @@ public class ThemeServiceImpl implements ThemeService {
     @Override
     public void delete(Integer id) {
         // 刪除主題
-        themeMapper.deleteById(id);
+        menuMapper.deleteById(id);
         // 刪除該主題下的餐點
-        mealMapper.deleteByThemeId(id);
+        mealMapper.deleteByMenuId(id);
     }
 
     /**
      * 修改主題
-     * @param theme
+     * @param menu
      */
     @Override
-    public void update(Theme theme) {
-        theme.setUpdateTime(LocalDateTime.now());
+    public void update(Menu menu) {
+        menu.setUpdateTime(LocalDateTime.now());
 
-        themeMapper.update(theme);
+        menuMapper.update(menu);
     }
 }

@@ -2,25 +2,25 @@ package com.springsecurityquickstart.service;
 
 
 
-import com.springsecurityquickstart.pojo.Theme;
+import com.springsecurityquickstart.pojo.Menu;
 
 import java.util.List;
 
 /**
  * 主題Service
  */
-public interface ThemeService {
+public interface MenuService {
     /**
      * 查詢全部主題數據
      * @return
      */
-    List<Theme> themeList();
+    List<Menu> menuList();
 
     /**
      * 新增主題
-     * @param theme
+     * @param menu
      */
-    void insert(Theme theme);
+    void insert(Menu menu);
 
     /**
      * 刪除主題
@@ -30,7 +30,7 @@ public interface ThemeService {
 
     /**
      * 修改主題
-     * @param theme
+     * @param menu
      */
-    void update(Theme theme);
+    void update(Menu menu);
 }

@@ -25,16 +25,16 @@ public interface MealMapper {
      * 新增餐點
      * @param meal
      */
-    @Insert("insert into tb_meal(name, price, count, description, image, theme_id, create_time, update_time) " +
-            "values (#{name}, #{price}, #{count}, #{description}, #{image}, #{themeId}, #{createTime}, #{updateTime})")
+    @Insert("insert into tb_meal(name, price, count, description, image, menu_id, create_time, update_time) " +
+            "values (#{name}, #{price}, #{count}, #{description}, #{image}, #{menuId}, #{createTime}, #{updateTime})")
     void insert(Meal meal);
 
     /**
      *根據主題ID刪除該主題中的餐點數據
-     * @param themeId
+     * @param menuId
      */
-    @Delete("delete from tb_meal where theme_id = #{themeId}")
-    void deleteByThemeId(Integer themeId);
+    @Delete("delete from tb_meal where menu_id = #{menuId}")
+    void deleteByMenuId(Integer menuId);
 
     /**
      * 根據ID刪除餐點

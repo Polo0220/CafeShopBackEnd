@@ -4,10 +4,21 @@ import com.springsecurityquickstart.pojo.option.OptionChildren;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
 
 @Mapper
 public interface OptionChildrenMapper {
+
+    /**
+     * 根據ID查詢子選項
+     * @param optionId
+     * @return
+     */
+    @Select("SELECT * FROM tb_option_children WHERE option_id = #{optionId}")
+    List<OptionChildren> selectOptionChildrenByOptionId(Integer optionId);
+
     /**
      * 新增子選項
      * @param child

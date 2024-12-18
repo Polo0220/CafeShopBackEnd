@@ -49,10 +49,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 對於登錄接口允許匿名訪問
                 .antMatchers("/user/login").anonymous()
                 // 對於特定方法請求允許無需權限訪問
-                .antMatchers(HttpMethod.GET, "/themes").permitAll()
+                .antMatchers(HttpMethod.GET, "/menus").permitAll()
                 .antMatchers(HttpMethod.GET, "/meals").permitAll()
                 .antMatchers(HttpMethod.POST, "/orders").permitAll()
                 .antMatchers(HttpMethod.GET, "/orders/{orderId}").permitAll()
+                .antMatchers(HttpMethod.GET, "/optionChildren/{optionId}").permitAll()
                 // 其他請求都需要身份驗證
                 .anyRequest().authenticated();
 
