@@ -23,11 +23,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private PermMapper menuMapper;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String account) throws UsernameNotFoundException {
 
         //查詢用戶訊息
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_name", username);
+        queryWrapper.eq("account", account);
         User user = userMapper.selectOne(queryWrapper);
         //如果沒有查詢到用戶就拋出異常
         if(Objects.isNull(user)){

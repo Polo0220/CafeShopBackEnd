@@ -22,9 +22,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addUser(User user) {
         // 檢查用戶是否存在
-        User existingUser = userMapper.selectOne(new QueryWrapper<User>().eq("user_name", user.getUserName()));
+        User existingUser = userMapper.selectOne(new QueryWrapper<User>().eq("account", user.getAccount()));
         if (existingUser != null) {
-            throw new RuntimeException("用戶名已存在");
+            throw new RuntimeException("帳號已存在");
         }
 
         // 加密密碼

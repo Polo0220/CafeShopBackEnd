@@ -37,7 +37,7 @@ public class LoginServiceImpl implements LoginService {
         //AuthenticationManager authenticate進行用戶認證
         //UsernamePasswordAuthenticationFilter封裝
         UsernamePasswordAuthenticationToken authenticationToken
-                = new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword());
+                = new UsernamePasswordAuthenticationToken(user.getAccount(), user.getPassword());
 
         //AuthenticationManager認證
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
