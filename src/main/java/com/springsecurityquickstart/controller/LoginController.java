@@ -1,5 +1,6 @@
 package com.springsecurityquickstart.controller;
 
+import com.springsecurityquickstart.anno.Log;
 import com.springsecurityquickstart.domain.ResponseResult;
 import com.springsecurityquickstart.domain.User;
 import com.springsecurityquickstart.service.LoginService;
@@ -15,6 +16,7 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    @Log
     @PostMapping("/user/login")
     public ResponseResult login(@RequestBody User user){
         //登錄
