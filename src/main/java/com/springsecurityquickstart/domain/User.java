@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
- * 用户表(User)实体类
+ * 用戶表(User)實體類
  *
- * @author 三更
+ *
  */
 @Data
 @AllArgsConstructor
@@ -31,19 +31,19 @@ public class User implements Serializable {
      */
     private String account;
     /**
-     * 密码
+     * 密碼
      */
     private String password;
     /**
-     * 账号状态（0正常 1停用）
+     * 帳號狀態（0正常 1停用）
      */
     private String status;
     /**
-     * 创建时间
+     * 創建時間
      */
     private LocalDateTime createTime;
     /**
-     * 更新时间
+     * 更新時間
      */
     private LocalDateTime updateTime;
 }

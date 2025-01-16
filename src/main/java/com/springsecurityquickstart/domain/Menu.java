@@ -11,10 +11,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 菜单表(Menu)实体类
+ * 菜單表(Menu)實體類
  *
- * @author makejava
- * @since 2021-11-24 15:30:08
  */
 @TableName(value = "sys_menu")
 @Data
@@ -26,7 +24,7 @@ public class Menu implements Serializable {
     @TableId
     private Long id;
     /**
-     * 菜单名
+     * 菜單名
      */
     private String menuName;
     /**
@@ -34,24 +32,24 @@ public class Menu implements Serializable {
      */
     private String path;
     /**
-     * 组件路径
+     * 組件路径
      */
 
     private String component;
     /**
-     * 菜单状态（0显示 1隐藏）
+     * 菜單状态（0顯示 1隐藏）
      */
     private String visible;
     /**
-     * 菜单状态（0正常 1停用）
+     * 菜單狀態（0正常 1停用）
      */
     private String status;
     /**
-     * 权限标识
+     * 權限標示
      */
     private String perms;
     /**
-     * 菜单图标
+     * 菜單圖標
      */
     private String icon;
     private Long createBy;
@@ -63,7 +61,7 @@ public class Menu implements Serializable {
      */
     private Integer delFlag;
     /**
-     * 备注
+     * 備註
      */
     private String remark;
 }

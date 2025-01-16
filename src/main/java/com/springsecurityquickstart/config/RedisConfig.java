@@ -18,10 +18,10 @@ public class RedisConfig {
         template.setConnectionFactory(connectionFactory);
         FastJsonRedisSerializer serializer = new
                 FastJsonRedisSerializer(Object.class);
-// 使用StringRedisSerializer来序列化和反序列化redis的key值
+        // 使用StringRedisSerializer來序列化和反序列化redis的key值
         template.setKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(serializer);
-// Hash的key也采用StringRedisSerializer的序列化方式
+        // Hash的key也採用StringRedisSerializer的序列化方式
         template.setHashKeySerializer(new StringRedisSerializer());
         template.setHashValueSerializer(serializer);
         template.afterPropertiesSet();

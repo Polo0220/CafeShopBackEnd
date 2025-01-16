@@ -34,7 +34,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new RuntimeException("用戶名或密碼錯誤");
         }
 
-        //TODO 查詢對應的權限訊息
+        //查詢對應的權限訊息
 //        List<String> list = new ArrayList<>(Arrays.asList("test", "admin"));
         List<String> list = menuMapper.selectPermsByUserId(user.getId());
 
